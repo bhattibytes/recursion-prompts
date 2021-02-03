@@ -68,7 +68,6 @@ var sumBelow = function(n) {
   if (n === 0) {
     return sum;
   }
-
   if (n < 0) {
     sum += (n+1);
     return sum += sumBelow(n+1);
@@ -155,14 +154,14 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
   string = string.toLowerCase();
+  if (string.length === 0) {
+    return true;
+  }
   if (string.length === 1) {
     return true;
   }
-  if (string.length === 2 && (string[0] === string[1])) {
-    return true
-  }
   if (string[0] === string[string.length -1]) {
-    return palindrome(string.slice(1, (string.length -1)));
+    return palindrome(string.slice(1, -1));
   }
   return false;
 };
