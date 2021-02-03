@@ -1627,7 +1627,7 @@
         expect(flatten([[1],[2,3],[[4]],5])).to.eql([1,2,3,4,5]);
         expect(flatten([3,[0,[34,[7,[18]]]]])).to.eql([3,0,34,7,18]);
         expect(flatten([[[[[3],0],34],7],18])).to.eql([3,0,34,7,18]);
-        expect(flatten([[1],[2,[],3],[],[[4]],5])).to.eql([1,2,3,4,5]);
+        expect(flatten([[true],[2,[],'3'],[],[[4]],'changed'])).to.eql([true,2,'3',4,'changed']);
       });
 
       it('should use recursion by calling self', function() {
